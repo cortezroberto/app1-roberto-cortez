@@ -9,7 +9,7 @@ app.debug = True # Debug permite ver cambios al momento
 Bootstrap(app)
 
 
-# Configuracion conexion postgress
+# Configuracion conexion postgress 
 # app.config['SQLAlCHEMY_DATABASE_URI']='postgresql+psycopg2://{user}:{password}@{direccion}:{puerto}/{basededaotos}'
 # app.config['SQLALCHEMY_DATABASE_URI']='postgresql+psycopg2://postgres:12345@localhost:5432/dbprueba'
 app.config['SQLALCHEMY_DATABASE_URI']='postgres://lmnmmudnvsosvj:d637f8449b776ad68e2e1ca074b497839ff065260144b01762aa8e5e28a2390c@ec2-54-157-78-113.compute-1.amazonaws.com:5432/daamhnr9s6u8s9'
