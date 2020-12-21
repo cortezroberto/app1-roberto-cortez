@@ -5,7 +5,26 @@ Acerca
 {% endblock %}
 
 {% block body %}
-    {% for r in variable %}
-    <p>{{r.nombre}},{{r.apellido}}</p>
-    {% endfor %}
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in variable %}
+                <tr>
+                    <th>{{r.id}}</th>
+                    <td>{{r.nombre}}</td>
+                    <td>{{r.apellido}}</td>
+                    <td><a href="editar/{{ r.id }}">Editar</a></td>
+                    <td><a href="eliminar/{{ r.id }}">Eliminar</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+    Editar
+{% endblock %}
+
+{% block body %}
+    <div>
+        <form action="{{ url_for('actualizar') }}" method='POST'>
+        <div>
+            <input type="hidden" name="id" id="id" value="{{ alumno.id }}">
+            <label>Nuevo nombre</label>
+            <input type="text" name="nombre" id="nombre" value="{{ alumno.nombre }}">
+        </div>
+        <div>
+            <label>Nuevo apellido</label>
+            <input type="text" name="apellido" id="apellido" value="{{ alumno.apellido }}">
+        </div>
+        <div>
+            <button type="submit">Guardar</button>
+            <a href="/../acerca" type="button">Cancelar</a>
+        </div>
+        
+        
+        </form>
+    </div>
+    <p>{{mensaje}}</p>
+{% endblock %}

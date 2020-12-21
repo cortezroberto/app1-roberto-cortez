@@ -47,6 +47,26 @@ def acerca():
     print(consulta)
     return render_template("acerca.html",variable = consulta)
 
+@app.route('/editar/<id>')
+def editar(id):
+    consulta = Alumnos.query.filter_by(id=int(id)).first()
+    return render_template("editar.html",alumno = consulta)
+
+@app.route('/actualizar', methods=['GET','POST'])
+def actualizar():
+    if request.method == 'POST':
+        qry = Alumnos.query.get(request.form['id'])
+        qry.nombre = request.form['nombre']
+        qry.apellido = request.form['apellido']
+        db.session.commit()
+        return redirect(url_for('acerca'))
+
+@app.route('/eliminar/<id>')
+def eliminar(id):
+    consulta = Alumnos.query.filter_by(id=int(id)).delete()
+    db.session.commit()
+    return redirect(url_for('acerca'))
+
 
 # Ejecutar de manera automatica el servidor a traves de Run()
 if __name__ == "__main__":
